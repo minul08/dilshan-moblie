@@ -18,6 +18,10 @@ public class GameData  {
         return cont;
     }
 
+    public static void setCont(boolean cont) {
+        GameData.cont = cont;
+    }
+
     public static boolean cont;
 
     public static int getId() {

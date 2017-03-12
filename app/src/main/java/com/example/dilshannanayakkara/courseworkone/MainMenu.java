@@ -34,12 +34,13 @@ public class MainMenu extends AppCompatActivity {
         });
     }
 
+    GameData gameData = new GameData();
     public void button2(){
         Button button2 = (Button) findViewById(R.id.ContinueButton);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //gameData.setContinue)true);
+                gameData.setCont(true);
                 startActivity(new Intent(MainMenu.this, GamePlay.class));
 
             }
@@ -91,8 +92,6 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
-                System.exit(0);
-
             }
         });
     }

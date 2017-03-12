@@ -184,7 +184,8 @@
         android:layout_alignBottom="@+id/secs"
         android:layout_toEndOf="@+id/secs"
         android:text="Seconds"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:paddingLeft="30px"/>
 
     <TextView
         android:id="@+id/txtHint"
