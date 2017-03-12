@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:text="Choose Difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/heading"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton
+        android:text="Novice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButtonNovice"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/heading"
+        android:layout_alignStart="@+id/radioButton4"
+        android:layout_marginStart="37dp" />
+
+    <RadioButton
+        android:text="Easy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButtonEasy"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/radioButtonNovice"
+        android:layout_alignStart="@+id/radioButtonNovice" />
+
+    <RadioButton
+        android:text="Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButtonMedium"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/radioButtonEasy"
+        android:layout_alignStart="@+id/radioButtonEasy" />
+
+    <RadioButton
+        android:text="Guru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioButtonMedium"
+        android:layout_alignStart="@+id/radioButtonMedium"
+        android:layout_marginTop="15dp"
+        android:id="@+id/radioButtonGuru" />
+
+    <Switch
+        android:text="Hint Mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="98dp"
+        android:id="@+id/switchHint"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_below="@+id/radioButtonGuru"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:id="@+id/button" />
+
+</RelativeLayout>

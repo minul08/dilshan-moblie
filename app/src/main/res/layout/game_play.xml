@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false">
+
+    <Button
+        android:text="DEL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/no7"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/delButton" />
+
+    <Button
+        android:text="7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no7"
+        android:layout_above="@+id/delButton"
+        android:layout_alignStart="@+id/no4" />
+
+    <Button
+        android:text="8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no8"
+        android:layout_above="@+id/no0"
+        android:layout_alignStart="@+id/no5" />
+
+    <Button
+        android:text="9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no9"
+        android:layout_above="@+id/hashButton"
+        android:layout_alignStart="@+id/no6" />
+
+    <Button
+        android:text="#"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hashButton"
+        android:layout_alignBaseline="@+id/no0"
+        android:layout_alignBottom="@+id/no0"
+        android:layout_alignStart="@+id/no9" />
+
+    <Button
+        android:text="5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no5"
+        android:layout_above="@+id/no8"
+        android:layout_alignStart="@+id/no2" />
+
+    <Button
+        android:text="4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no4"
+        android:layout_above="@+id/no7"
+        android:layout_alignStart="@+id/no1" />
+
+    <Button
+        android:text="6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no6"
+        android:layout_above="@+id/no9"
+        android:layout_alignStart="@+id/no3" />
+
+    <Button
+        android:text="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no1"
+        android:layout_above="@+id/no4"
+        android:layout_alignStart="@+id/guessText" />
+
+    <Button
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no0"
+        android:layout_alignBaseline="@+id/delButton"
+        android:layout_alignBottom="@+id/delButton"
+        android:layout_alignStart="@+id/no8" />
+
+    <Button
+        android:text="-"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/minusButton"
+        android:layout_alignBaseline="@+id/hashButton"
+        android:layout_alignBottom="@+id/hashButton"
+        android:layout_toEndOf="@+id/no9" />
+
+    <Button
+        android:text="3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no3"
+        android:layout_above="@+id/no6"
+        android:layout_toEndOf="@+id/no8" />
+
+    <Button
+        android:text="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no2"
+        android:layout_alignBaseline="@+id/no1"
+        android:layout_alignBottom="@+id/no1"
+        android:layout_toEndOf="@+id/no1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/minusButton"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:text="Guess: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guessText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+        android:layout_marginStart="47dp"
+        android:layout_alignBaseline="@+id/editText"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="CORRECT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/responseTextView"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/editText"
+        android:layout_alignStart="@+id/editText" />
+
+    <TextView
+        android:text="Time Remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeTextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_marginTop="66dp"
+        android:layout_below="@+id/responseTextView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/secsNoTextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/timeTextView"
+        android:layout_toEndOf="@+id/no1" />
+
+    <TextView
+        android:text="Seconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/secondsTextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_alignBaseline="@+id/secsNoTextView"
+        android:layout_alignBottom="@+id/secsNoTextView"
+        android:layout_toEndOf="@+id/secsNoTextView" />
+
+</RelativeLayout>
