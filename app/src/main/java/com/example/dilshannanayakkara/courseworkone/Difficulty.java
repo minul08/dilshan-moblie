@@ -32,14 +32,10 @@ public class Difficulty extends Activity{
 
     public void startNewGame(){
 
-        Button startNewGame = (Button) findViewById(R.id.NewGameButton);
-        final RadioButton difficultyNovice = (RadioButton) findViewById(R.id.radioButtonNovice);
+        Button startNewGame = (Button) findViewById(R.id.start_game);
         gameData = new GameData();
-        if (difficultyNovice.isChecked()){
-            //gameData.setdifficultyLevel("novice");
-        }
 
-        //final RadioButton difficultyNovice = (RadioButton) findViewById(R.id.radioButtonNovice);
+        final RadioButton difficultyNovice = (RadioButton) findViewById(R.id.radioButtonNovice);
         final RadioButton difficultyEasy = (RadioButton) findViewById(R.id.radioButtonEasy);
         final RadioButton difficultyMedium = (RadioButton) findViewById(R.id.radioButtonMedium);
         final RadioButton difficultyGuru = (RadioButton) findViewById(R.id.radioButtonGuru);
@@ -50,34 +46,18 @@ public class Difficulty extends Activity{
 
                 gameData = new GameData();
 
-                final RadioButton difficultyNovice = (RadioButton) findViewById(R.id.radioButtonNovice);
-                if (difficultyNovice.isChecked())
-
-                {
-                  gameData.setDifficulty_level("novice");
+                if (difficultyNovice.isChecked()) {
+                    gameData.setDifficulty_level("novice");
                 }
-
-                final RadioButton difficultyEasy = (RadioButton) findViewById(R.id.radioButtonEasy);
-                if (difficultyNovice.isChecked())
-
-                {
-                   gameData.setDifficulty_level("easy");
+                if (difficultyEasy.isChecked()) {
+                    gameData.setDifficulty_level("easy");
                 }
-
-                final RadioButton difficultyMedium = (RadioButton) findViewById(R.id.radioButtonMedium);
-                if (difficultyNovice.isChecked())
-
-                {
+                if (difficultyMedium.isChecked()) {
                     gameData.setDifficulty_level("medium");
                 }
-
-                final RadioButton difficultyGuru = (RadioButton) findViewById(R.id.radioButtonGuru);
-                if (difficultyNovice.isChecked())
-
-                {
+                if (difficultyGuru.isChecked()) {
                     gameData.setDifficulty_level("guru");
                 }
-
                 startActivity(new Intent(Difficulty.this, GamePlay.class));
 
             }
@@ -85,16 +65,18 @@ public class Difficulty extends Activity{
     }
 
     public void switchControl(){
-        gameData.setnumberOfHints(4);
+        gameData.setNumOfHints(4);
         Switch hintSwitch = (Switch) findViewById(R.id.hintSwitch);
 
         hintSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Toast.makeText(getApplicationContext(), "Hint Mode ON", Toast.LENGTH_LONG).show();
+                    gameData.setHintMode(true);
+                   Toast.makeText(getApplicationContext(), "Hint Mode ON", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Hint Mode OFF", Toast.LENGTH_LONG).show();
+                    gameData.setHintMode(false);
+                   Toast.makeText(getApplicationContext(), "Hint Mode OFF", Toast.LENGTH_LONG).show();
                 }
             }
         });

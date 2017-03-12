@@ -59,4 +59,12 @@
         android:id="@+id/hintSwitch"
         android:layout_below="@+id/radioButtonGuru"
         android:layout_alignStart="@+id/radioButtonGuru" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Game"
+        android:id="@+id/start_game"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"/>
 </RelativeLayout>
