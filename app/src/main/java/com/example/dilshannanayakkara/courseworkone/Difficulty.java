@@ -32,10 +32,10 @@ public class Difficulty extends Activity{
         final RadioButton difficultyNovice = (RadioButton) findViewById(R.id.radioButtonNovice);
         gameData = new GameData();
         if (difficultyNovice.isChecked()){
-            gameData.setdifficultyLevel("novice");
+            //gameData.setdifficultyLevel("novice");
         }
 
-        final RadioButton difficultyNovice = (RadioButton) findViewById(R.id.radioButtonNovice);
+        //final RadioButton difficultyNovice = (RadioButton) findViewById(R.id.radioButtonNovice);
         final RadioButton difficultyEasy = (RadioButton) findViewById(R.id.radioButtonEasy);
         final RadioButton difficultyMedium = (RadioButton) findViewById(R.id.radioButtonMedium);
         final RadioButton difficultyGuru = (RadioButton) findViewById(R.id.radioButtonGuru);
