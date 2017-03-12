@@ -14,6 +14,12 @@ public class GameData  {
     public static int numOfHints;
     public static int numberOfQuestions;
 
+    public static boolean isCont() {
+        return cont;
+    }
+
+    public static boolean cont;
+
     public static int getId() {
         return id;
     }

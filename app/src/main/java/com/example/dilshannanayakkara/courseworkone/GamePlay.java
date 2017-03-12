@@ -30,6 +30,18 @@ public class GamePlay extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_play);
+
+//Initializing
+        gameData.setNumOfHints(4);
+        gameData.setId(1);
+        gameData.setNumberOfQuestions(1);
+
+        if (gameData.isCont()) {
+            System.out.println("Game resuming....");
+            SaveGame savedGame = new SaveGame(getApplicationContext());
+            savedGame.retGameData(1);
+        }
+
         secondsRemaning = (TextView) this.findViewById(R.id.secs);
         qa = (TextView) findViewById(R.id.txtQuestion);
         txtAnswer = (TextView) findViewById(R.id.txtAnswer);
@@ -48,6 +60,45 @@ public class GamePlay extends Activity {
         buttonMinus();
         buttonHash();
         hintMode();
+    }
+
+    @Override
+    public void onBackPressed() {
+        time.cancel();
+        Context context = this;
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
+        builder1.setMessage("Do you want to save this game?");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                        SaveGame saveGame = new SaveGame(getApplicationContext());
+                        System.out.println("Score: " + gameData.getScore());
+
+
+
+
+                        saveGame.saveGameData(gameData);
+                        //saveGame.retGameData(1);
+                        startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // dialogBox = false;
+                        dialog.cancel();
+                        startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 
     public CountDownTimer time;
@@ -101,21 +152,6 @@ public class GamePlay extends Activity {
                 }
             }
 
-        }.start();
-    }
-
-    public void Delay() {
-        new CountDownTimer(1000, 1000) {
-            TextView responce = (TextView) findViewById(R.id.responseTextView);
-
-            public void onTick(long millisUntilFinished) {
-
-            }
-
-            public void onFinish() {
-                //responce.setText("Time Remaining");
-                //secs.setText("Seconds");
-            }
         }.start();
     }
 
@@ -490,10 +526,10 @@ public void button1() {
     public void compare(){
         if((Integer.parseInt(userAnswer))>answer){
             hint.setText("Less");
-            Delay();
+            //Delay();
         }else{
             hint.setText("Greater");
-            Delay();
+            //Delay();
         }
     }
 
