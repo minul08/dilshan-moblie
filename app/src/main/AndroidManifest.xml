@@ -14,11 +14,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Difficulty"
             android:label="difficulty">
         </activity>
+        <activity
+            android:name=".GamePlay"
+            android:label="game_play">
+        </activity>
     </application>
-
 </manifest>
