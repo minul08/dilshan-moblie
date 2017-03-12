@@ -11,9 +11,13 @@
         <activity android:name=".MainMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Difficulty"
+            android:label="difficulty">
         </activity>
     </application>
 
